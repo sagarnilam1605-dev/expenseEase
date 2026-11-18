@@ -9,14 +9,7 @@ const BudgetRoutes = require('./Routes/budget.routes.js');
 const connectDB = require('./lib/connectDB.js');
 const cors = require('cors');
 
-const corsOptions = {
-  origin: "https://expense-ease-frontend-five.vercel.app",
-  methods: ["GET", "POST", "PUT", "PATCH", "DELETE", "OPTIONS"],
-  allowedHeaders: ["Content-Type", "Authorization"],
-};
-
-app.use(cors(corsOptions));
-app.options(/.*/, cors(corsOptions));
+app.use(cors());
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 

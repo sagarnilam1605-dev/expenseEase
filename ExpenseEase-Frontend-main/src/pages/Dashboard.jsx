@@ -98,6 +98,7 @@ const Dashboard = () => {
       const updatedList = expense.filter((e) => e._id !== id);
       setExpense(updatedList);
       calculateTotal(updatedList);
+      calculateBudgetStats(updatedList, budgets);
       toast.success("Expense deleted Successfully!");
     } catch (err) {
       toast.error(err);
